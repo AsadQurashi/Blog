@@ -204,7 +204,8 @@ const Login = () => {
   {
     e.preventDefault();
     console.log(e.target.name, e.target.value);
-    let response = await  API.UserSignup(data);
+    const response = await  API.UserSignup(data);
+    console.log("This is api",API.UserSignup);
     if(response.isSuccess)
     {
       seterror('');

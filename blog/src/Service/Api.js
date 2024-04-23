@@ -7,7 +7,7 @@ const instances = axios.create({
   baseURL: API_url,
   timeout: 10000,
   headers: {
-    "Content-Type": "User signup form/json",
+    "Content-Type": "application/json",
   },
 });
 
@@ -80,8 +80,8 @@ const API = {};
 
 for (const [key, value] of Object.entries(Services_url)){
   API[key] =(body, showUploadProgress, showDownloadProgress) =>{
-      instances  ({
-        url : value.url,
+      instances({
+        url: value.url,
         method: value.method,
         data : body,
         responseType : value.responseType,

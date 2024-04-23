@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: false,
   },
-  phhone_no: {
+  phone_no: {
     type: Number,
     require: true,
   },
