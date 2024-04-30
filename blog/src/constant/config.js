@@ -4,7 +4,7 @@ export const API_NOTIFICATIONS_MSG =
         title: "Loadng....",
         message: "Data is being loading , Please wait",
     },
-    success: {
+    isSuccess: {
         title: "success",
         message: "Data is loaded successfully",
     },

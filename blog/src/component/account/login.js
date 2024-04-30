@@ -176,6 +176,14 @@ const Text = styled(Typography)`
   font-size: 16px;
 `;
 
+const Error = styled(Typography)`
+font-size : 10px;
+color : #ff6161;
+line-height : 0;
+margin-top: 10px
+font-weight : 600;
+`
+
 const signupinititalvalue = {
   name: "",
   lastname: "",
@@ -200,23 +208,26 @@ const Login = () => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
 
-  const SingupUSer = async (e) =>
-  {
-    e.preventDefault();
+  const SignupUSer = async (e) => {
+    e.preventDefault(e);
     console.log(e.target.name, e.target.value);
-    const response = await  API.UserSignup(data);
-    console.log("This is api",API.UserSignup);
-    if(response.isSuccess)
-    {
-      seterror('');
-      setdata(signupinititalvalue);
-      ToggleAccount('login');
-    }
-    else
-    {
+    try {
+      const response = await API.UserSignup(data);
+      console.log("Response from API:"+response); // Add this log statement
+      if (response.isSuccess) {
+        seterror('');
+        setdata(signupinititalvalue);
+        ToggleAccount('login');
+      } else {
+        console.log("Signup Failed",error);
+        seterror('Something went wrong, please try again later');
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
       seterror('Something went wrong, please try again later');
     }
   }
+  
   return (
     <Component>
       {account === "login" ? (
@@ -243,7 +254,8 @@ const Login = () => {
               value={data.password}
               variant="standard"
             />
-            <LoginButton variant="contained" onClick={(e)=> SingupUSer(e)}>Login</LoginButton>
+            {error && <Error>{error}</Error> }
+            <LoginButton variant="contained" onClick={(e)=> SignupUSer(e)}>Login</LoginButton>
             <Text style={{ textAlign: "center" }}>OR</Text>
             <SigninButton onClick={() => ToggleAccount()}>
               Create an account
@@ -308,8 +320,8 @@ const Login = () => {
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
-            {error && <Typography>{error}</Typography> }
-            <LoginButton variant="contained" onClick={(e) => SingupUSer(e)} >Register</LoginButton>{" "}
+            {error && <Error>{error}</Error> }
+            <LoginButton variant="contained" onClick={(e) => SignupUSer(e)} >Register</LoginButton>{" "}
             {/* Sign in Button */}
             <Text style={{ textAlign: "center" }}>OR</Text>
             <SigninButton onClick={() => ToggleAccount()}>
