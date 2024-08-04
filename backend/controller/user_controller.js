@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import bcrypt from 'bcrypt';
 import User from "../Model/user_schema.js";
 import jwt from 'jsonwebtoken';
@@ -23,10 +24,21 @@ export const signup = async (request, response) => {
     const newUser = new User(gotUserData);
     await newUser.save();
     return response.status(200).json({ msg: "signup successful" });
+=======
+import User from "../Model/user_schema.js";
+
+export const signup = async (request, response) => {
+  try {
+    const gotUserData = request.body;
+    const newUser = new User(gotUserData);
+    await newUser.save();
+    return response.status(200).json({msg: "signup successful" });
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   } catch (error) {
     return response.status(500).json({ msg: "Error while Signup" });
   }
 };
+<<<<<<< HEAD
 
 // Login
 export const login = async (request, response) => {
@@ -53,3 +65,5 @@ export const login = async (request, response) => {
     return response.status(500).json({ msg: "Error while loginig in" });
   }
 };
+=======
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4

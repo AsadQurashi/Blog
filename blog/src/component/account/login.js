@@ -1,10 +1,16 @@
 import { Box, Button, TextField, Typography, keyframes, styled } from '@mui/material';
+<<<<<<< HEAD
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DataContext } from '../../Context/Dataprovider';
 import { API } from '../../Service/Api';
 
 
+=======
+import { useState } from 'react';
+import { API } from '../../Service/Api';
+
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
 const LoginBlock = styled(Box)`
   color: white;
 `;
@@ -39,7 +45,11 @@ const shadowColorAnimation = keyframes`
     }
 `;
 
+<<<<<<< HEAD
 const Component = styled(Box)`          
+=======
+const Component = styled(Box)`
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   padding: auto;
   width: 450px;
   margin: auto;
@@ -179,16 +189,31 @@ const Text = styled(Typography)`
   font-size: 16px;
 `;
 
+<<<<<<< HEAD
 const signupinititalvalue = {
   name: "",
   lastname: "",
   username : "",
+=======
+const Error = styled(Typography)`
+font-size : 10px;
+color : #ff6161;
+line-height : 0;
+margin-top: 10px
+font-weight : 600;
+`
+
+const signupinititalvalue = {
+  name: "",
+  lastname: "",
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   phone_no: "",
   email: "",
   password: "",
   confirm_password: "",
 };
 
+<<<<<<< HEAD
 const logindata = {
   Username : "",
   Email: "",
@@ -206,6 +231,12 @@ const Login = ({setUserAuthenticated}) => {
   // Navigation
   const navigate = useNavigate();
   
+=======
+const Login = () => {
+  const [account, setaccount] = useState("login");
+  const [data, setdata] = useState(signupinititalvalue);
+  const [error , seterror] = useState('');
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   const ToggleAccount = () => {
     account === "login" ? setaccount("Signup") : setaccount("login");
   };
@@ -214,6 +245,7 @@ const Login = ({setUserAuthenticated}) => {
   const signupimg = "./Picture/6159448.png"; //Sign up
 
   const handleinput = (e) => {
+<<<<<<< HEAD
     setsignin({ ...signin, [e.target.name]: e.target.value });
   };
 
@@ -281,6 +313,31 @@ const Login = ({setUserAuthenticated}) => {
     }
 
   }
+=======
+    setdata({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const SignupUSer = async (e) => {
+    e.preventDefault(e);
+    console.log(e.target.name, e.target.value);
+    try {
+      const response = await API.UserSignup(data);
+      console.log("Response from API:"+response); // Add this log statement
+      if (response.isSuccess) {
+        seterror('');
+        setdata(signupinititalvalue);
+        ToggleAccount('login');
+      } else {
+        console.log("Signup Failed",error);
+        seterror('Something went wrong, please try again later');
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+      seterror('Something went wrong, please try again later');
+    }
+  }
+  
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   return (
     <Component>
       {account === "login" ? (
@@ -290,6 +347,7 @@ const Login = ({setUserAuthenticated}) => {
           </ImageContainer>
           <Wrapper>
             <StyledTextField
+<<<<<<< HEAD
               id="standard-email"
               label="Email"
               type="email"
@@ -310,14 +368,39 @@ const Login = ({setUserAuthenticated}) => {
             <LoginButton variant="contained" onClick={(e) => handleLogin(e)}>
               Login
             </LoginButton>
+=======
+              id="standard-basic"
+              label="Email"
+              type="email"
+              onChange={(e) => handleinput(e)}
+              name="email"
+              value={data.email}
+              variant="standard"
+            />
+            <StyledTextField
+              id="standard-basic"
+              label="Password"
+              type="password"
+              onChange={(e) => handleinput(e)}
+              name="password"
+              value={data.password}
+              variant="standard"
+            />
+            {error && <Error>{error}</Error> }
+            <LoginButton variant="contained" onClick={(e)=> SignupUSer(e)}>Login</LoginButton>
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
             <Text style={{ textAlign: "center" }}>OR</Text>
             <SigninButton onClick={() => ToggleAccount()}>
               Create an account
             </SigninButton>
           </Wrapper>
         </LoginBlock>
+<<<<<<< HEAD
       ) :
       (
+=======
+      ) : (
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
         // Sign Up
         <SignUpBlock>
           <ImageContainer>
@@ -325,22 +408,37 @@ const Login = ({setUserAuthenticated}) => {
           </ImageContainer>
           <Wrapper>
             <StyledTextField
+<<<<<<< HEAD
               id="standard-name"
               label="Name"
               name="name"
               value={signin.name}
+=======
+              id="standard-basic"
+              label="Name"
+              name="name"
+              value={data.name}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
+<<<<<<< HEAD
               id="standard-lastname"
               label="Last Name"
               name="lastname"
               value={signin.lastname}
+=======
+              id="standard-basic"
+              label="Last Name"
+              name="lastname"
+              value={data.lastname}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
+<<<<<<< HEAD
               id="standard-username"
               label="User Name"
               name="username"
@@ -353,28 +451,51 @@ const Login = ({setUserAuthenticated}) => {
               label="Phone No"
               name="phone_no"
               value={signin.phone_no}
+=======
+              id="standard-basic"
+              label="Phone No"
+              name="phone_no"
+              value={data.phone_no}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
+<<<<<<< HEAD
               id="standard-sign in email"
               label="E-Mail"
               type="email"
               name="email"
               value={signin.email}
+=======
+              id="standard-basic"
+              label="E-Mail"
+              type="email"
+              name="email"
+              value={data.email}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
+<<<<<<< HEAD
               id="standard-sign in password"
               label="Password"
               type="password"
               name="password"
               value={signin.password}
+=======
+              id="standard-basic"
+              label="Password"
+              type="password"
+              name="password"
+              value={data.password}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
               onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
+<<<<<<< HEAD
               id="standard-confirm password"
               label="Comfirm Password"
               type="password"
@@ -387,6 +508,18 @@ const Login = ({setUserAuthenticated}) => {
             <LoginButton variant="contained" onClick={(e) => SingupUSer(e)}>
               Register
             </LoginButton>{" "}
+=======
+              id="standard-basic"
+              label="Comfirm Password"
+              type="password"
+              name="confirm_password"
+              value={data.confirm_password}
+              onChange={(e) => handleinput(e)}
+              variant="standard"
+            />
+            {error && <Error>{error}</Error> }
+            <LoginButton variant="contained" onClick={(e) => SignupUSer(e)} >Register</LoginButton>{" "}
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
             {/* Sign in Button */}
             <Text style={{ textAlign: "center" }}>OR</Text>
             <SigninButton onClick={() => ToggleAccount()}>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Outlet, Route, Routes , Navigate } from 'react-router-dom';
 import './App.css'
 import { useState } from 'react';
@@ -56,6 +57,16 @@ function App() {
         </div>
       </BrowserRouter>
     </DataProvider>
+=======
+import './App.css';
+import Login from './component/account/login';
+
+function App() {
+  return (
+    <div className="App">
+      <Login />
+    </div>
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   );
 }
 

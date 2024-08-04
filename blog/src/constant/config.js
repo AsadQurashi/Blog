@@ -4,7 +4,11 @@ export const API_NOTIFICATIONS_MSG =
         title: "Loadng....",
         message: "Data is being loading , Please wait",
     },
+<<<<<<< HEAD
     success: {
+=======
+    isSuccess: {
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
         title: "success",
         message: "Data is loaded successfully",
     },
@@ -25,8 +29,13 @@ export const API_NOTIFICATIONS_MSG =
 };
 
 // url / api for requested or link
+<<<<<<< HEAD
 export const Services_url = {
   UserSignup: { url: "/sign", method: "POST" },
   UserLogin: { url: "/login", method: "POST" },
   UploadFile: { url: "/file/upload", method: "POST" },
 };
+=======
+export const Services_url = ({ UserSignup : { url : '/sign' , method : 'POST' }
+});
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4

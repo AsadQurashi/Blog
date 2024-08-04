@@ -1,5 +1,6 @@
 {
   "name": "blog",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
@@ -21,6 +22,34 @@
     "react-router-dom": "^6.24.1",
     "react-scripts": "^5.0.1",
     "web-vitals": "^4.2.1"
+=======
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   },
   "browserslist": {
     "production": [
@@ -33,5 +62,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
+=======
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.11.0",
+    "webpack-dev-server": "4.14.0"
+>>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   }
 }
