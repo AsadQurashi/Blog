@@ -1,16 +1,15 @@
-import { Box, Button, TextField, Typography, keyframes, styled } from '@mui/material';
-<<<<<<< HEAD
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { DataContext } from '../../Context/Dataprovider';
-import { API } from '../../Service/Api';
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  keyframes,
+  styled,
+} from "@mui/material";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { API } from "../../Service/Api";
 
-
-=======
-import { useState } from 'react';
-import { API } from '../../Service/Api';
-
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
 const LoginBlock = styled(Box)`
   color: white;
 `;
@@ -21,52 +20,36 @@ const SignUpBlock = styled(Box)`
 const shadowColorAnimation = keyframes`
     0% {
         box-shadow: 
-            5px 6px 5px 12px rgba(10, 41, 116, 0.6), /* Original shadow */
-            -5px -6px 5px 12px rgba(22, 8, 16, 0.6), /* Gradient shadow layer 1 */
-            -5px -6px 10px 12px rgba(30, 18, 28, 0.6), /* Gradient shadow layer 2 */
-            -5px -6px 15px 12px rgba(38, 25, 41, 0.6), /* Gradient shadow layer 3 */
-            -5px -6px 20px 12px rgba(43, 33, 55, 0.6); /* Gradient shadow layer 4 */
+            5px 6px 5px 12px rgba(10, 41, 116, 0.6), 
+            -5px -6px 5px 12px rgba(22, 8, 16, 0.6),
+            -5px -6px 10px 12px rgba(30, 18, 28, 0.6),
+            -5px -6px 15px 12px rgba(38, 25, 41, 0.6),
+            -5px -6px 20px 12px rgba(43, 33, 55, 0.6);
     }
     50% {
         box-shadow: 
-            5px 6px 5px 12px rgba(116, 41, 10, 0.6), /* Original shadow */
-            -5px -6px 5px 12px rgba(16, 8, 22, 0.6), /* Gradient shadow layer 1 */
-            -5px -6px 10px 12px rgba(28, 18, 30, 0.6), /* Gradient shadow layer 2 */
-            -5px -6px 15px 12px rgba(41, 25, 38, 0.6), /* Gradient shadow layer 3 */
-            -5px -6px 20px 12px rgba(55, 33, 43, 0.6); /* Gradient shadow layer 4 */
+            5px 6px 5px 12px rgba(116, 41, 10, 0.6),
+            -5px -6px 5px 12px rgba(16, 8, 22, 0.6),
+            -5px -6px 10px 12px rgba(28, 18, 30, 0.6),
+            -5px -6px 15px 12px rgba(41, 25, 38, 0.6),
+            -5px -6px 20px 12px rgba(55, 33, 43, 0.6);
     }
     100% {
         box-shadow: 
-            5px 6px 5px 12px rgba(10, 41, 116, 0.6), /* Original shadow */
-            -5px -6px 5px 12px rgba(22, 8, 16, 0.6), /* Gradient shadow layer 1 */
-            -5px -6px 10px 12px rgba(30, 18, 28, 0.6), /* Gradient shadow layer 2 */
-            -5px -6px 15px 12px rgba(38, 25, 41, 0.6), /* Gradient shadow layer 3 */
-            -5px -6px 20px 12px rgba(43, 33, 55, 0.6); /* Gradient shadow layer 4 */
+            5px 6px 5px 12px rgba(10, 41, 116, 0.6),
+            -5px -6px 5px 12px rgba(22, 8, 16, 0.6),
+            -5px -6px 10px 12px rgba(30, 18, 28, 0.6),
+            -5px -6px 15px 12px rgba(38, 25, 41, 0.6),
+            -5px -6px 20px 12px rgba(43, 33, 55, 0.6);
     }
 `;
 
-<<<<<<< HEAD
-const Component = styled(Box)`          
-=======
 const Component = styled(Box)`
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   padding: auto;
   width: 450px;
   margin: auto;
-  animation: ${shadowColorAnimation} 3s infinite; /* Color animation for box-shadow */
+  animation: ${shadowColorAnimation} 3s infinite;
 `;
-
-// const Component = styled(Box)`
-//     width : 400px;
-//     margin: auto;
-//     margin-top: 7%;
-//     box-shadow:
-//         5px 6px 5px 12px rgba(10, 41, 116, 0.6), /* Original shadow */
-//         -5px -6px 5px 12px rgba(22, 8, 16, 0.6), /* Gradient shadow layer 1 */
-//         -5px -6px 10px 12px rgba(30, 18, 28, 0.6), /* Gradient shadow layer 2 */
-//         -5px -6px 15px 12px rgba(38, 25, 41, 0.6), /* Gradient shadow layer 3 */
-//         -5px -6px 20px 12px rgba(43, 33, 55, 0.6); /* Gradient shadow layer 4 */
-//     `
 
 const ImageContainer = styled(Box)`
   color: white;
@@ -75,7 +58,7 @@ const Image = styled("img")({
   width: 400,
   margin: "auto",
   display: "flex",
-  padding: "50px , 0 , 0",
+  padding: "50px 0 0",
 });
 
 const Wrapper = styled(Box)`
@@ -121,27 +104,27 @@ const LoginButton = styled(Button)`
     #42c7d0,
     #5ffbf1
   );
-  background-size: 100% 100%; /* Double the size to cover the whole button */
-  transition: background-position 3s; /* Smooth transition for the animation */
-  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 225);
+  background-size: 100% 100%;
+  transition: background-position 3s;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.225);
 
   &:hover {
     background-size: 200% 200%;
-    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 225%);
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.225);
     animation: ${LoginGradiantColor} 3s infinite;
-    background-position: 100% 50%; /* Move the gradient to the end on hover */
+    background-position: 100% 50%;
   }
 `;
 
 const SigninGradiantColor = keyframes`
     0% {
-        background-position : 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-        background-position : 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-        background-position : 0% 50%;
+        background-position: 0% 50%;
     }
 `;
 
@@ -163,24 +146,49 @@ const SigninButton = styled(Button)`
     #8e1e1e
   );
   background-size: 100% 100%;
-  transition: background-position 3sec;
+  transition: background-position 3s;
   color: white;
   height: 48px;
   border-radius: 2px;
-  box-shadow: 0px 3px 4px 0px rgb(0 0 0/ 80%);
+  box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 0.8);
+
   &:hover {
-    box-shadow: 0px 3px 4px 0px rgb(0 0 0/ 80%);
+    box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 0.8);
     background-size: 200% 200%;
     animation: ${SigninGradiantColor} 3s infinite;
     background-position: 100% 50%;
   }
 `;
 
+const CreateAccountButton = styled(Button)`
+  text-transform: none;
+  background-image: linear-gradient(
+    to right top,
+    #c2c2c2,
+    #a2a2a2,
+    #828282,
+    #626262,
+    #434343
+  );
+  background-size: 100% 100%;
+  transition: background-position 3s;
+  color: black;
+  height: 48px;
+  border-radius: 2px;
+  box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 0.8);
+
+  &:hover {
+    background-size: 200% 200%;
+    box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 0.8);
+    background-position: 100% 50%;
+  }
+`;
+
 const StyledTextField = styled(TextField)`
   input {
-    font-size: 16px; /* Change font size */
-    font-family: Arial, sans-serif; /* Change font family */
-    font-weight: bold; /* Change font weight */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
   }
 `;
 
@@ -189,155 +197,101 @@ const Text = styled(Typography)`
   font-size: 16px;
 `;
 
-<<<<<<< HEAD
-const signupinititalvalue = {
-  name: "",
-  lastname: "",
-  username : "",
-=======
 const Error = styled(Typography)`
-font-size : 10px;
-color : #ff6161;
-line-height : 0;
-margin-top: 10px
-font-weight : 600;
-`
+  font-size: 10px;
+  color: #ff6161;
+  line-height: 0;
+  margin-top: 10px;
+  font-weight: 600;
+`;
 
-const signupinititalvalue = {
+const signupInitialValue = {
   name: "",
   lastname: "",
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
+  username: "",
   phone_no: "",
   email: "",
   password: "",
   confirm_password: "",
 };
 
-<<<<<<< HEAD
-const logindata = {
-  Username : "",
+const loginInitialValue = {
+  Username: "",
   Email: "",
   Password: "",
 };
 
-const Login = ({setUserAuthenticated}) => {
-  const [account, setaccount] = useState("login");
-  const [signin, setsignin] = useState(signupinititalvalue);
-  const [login, setlogin] = useState(logindata);
-  const [error, seterror] = useState('');
+const Login = ({ setUserAuthenticated }) => {
+  const [account, setAccount] = useState("login");
+  const [data, setData] = useState(signupInitialValue);
+  const [login, setLogin] = useState(loginInitialValue);
+  const [error, setError] = useState("");
 
-  const { set_account } = useContext(DataContext);
-
-  // Navigation
   const navigate = useNavigate();
-  
-=======
-const Login = () => {
-  const [account, setaccount] = useState("login");
-  const [data, setdata] = useState(signupinititalvalue);
-  const [error , seterror] = useState('');
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
+
   const ToggleAccount = () => {
-    account === "login" ? setaccount("Signup") : setaccount("login");
+    setAccount(account === "login" ? "Signup" : "login");
   };
 
-  const imgurl = "./Picture/login-picture.jpg"; //Log in
-  const signupimg = "./Picture/6159448.png"; //Sign up
+  const imgurl = "./Picture/login-picture.jpg"; // Login image
+  const signupimg = "./Picture/6159448.png"; // Sign up image
 
-  const handleinput = (e) => {
-<<<<<<< HEAD
-    setsignin({ ...signin, [e.target.name]: e.target.value });
+  const handleInput = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  // Signup
-
-  const SingupUSer = async (e) => {
+  const SignupUser = async (e) => {
     e.preventDefault();
-    console.log(e.target.name, e.target.value);
-    try {
-      const response = await API.UserSignup(signin);
-      console.log("IsSuccess : ", response.isSucces);
-      if (response.isSucces) {
-        seterror('');
-        setsignin(signupinititalvalue);
-        setlogin('');
-        ToggleAccount('login');
-      }
-      else {
-        seterror('Something went wrong, please try again later');
-      }
-    }
-    catch (error) {
-      console.log("Error in signing up ", error)
-      seterror("Something went wrong, please try again later");
-    }
-  };
-
-  // Login
-
-  const handleLoginInput = (e) => {
-    setlogin({ ...login, [e.target.name]: e.target.value });
-  };
-
-  const handleLogin = async (e) =>
-  {
-    e.preventDefault(e);
-    console.log(e.target.name, e.target.value);
-    try {
-      const response = await API.UserLogin(login);
-      if (response.isSucces)
-      {
-        seterror('');
-        sessionStorage.setItem('accessToken', `Bearer${response.data.accessToken}`);
-        sessionStorage.setItem('refreshToken', `Bearer${response.data.refreshToken}`);
-        set_account({
-          Username: response.data.username,
-          Email: response.data.email,
-        });
-        console.log("User Name :", response.data.username, "Email : ", response.data.email);
-
-        console.log("Login successful");
-        console.log("I am above navigation");
-        setUserAuthenticated(true);
-        navigate("/");
-      }
-      else
-      {
-        seterror("Login Failed");
-        }
-    }
-    catch (error)
-    {
-      console.error("Error in login function", error);
-      seterror("Error while logingin , please wait ");
-    }
-
-  }
-=======
-    setdata({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const SignupUSer = async (e) => {
-    e.preventDefault(e);
-    console.log(e.target.name, e.target.value);
     try {
       const response = await API.UserSignup(data);
-      console.log("Response from API:"+response); // Add this log statement
       if (response.isSuccess) {
-        seterror('');
-        setdata(signupinititalvalue);
-        ToggleAccount('login');
+        setError("");
+        setData(signupInitialValue);
+        ToggleAccount();
       } else {
-        console.log("Signup Failed",error);
-        seterror('Something went wrong, please try again later');
+        setError("Something went wrong, please try again later");
       }
     } catch (error) {
       console.error("Error during signup:", error);
-      seterror('Something went wrong, please try again later');
+      setError("Something went wrong, please try again later");
     }
-  }
-  
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
+  };
+
+  const handleLoginInput = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await API.UserLogin(login);
+      if (response.isSuccess) {
+        setError("");
+        sessionStorage.setItem(
+          "accessToken",
+          `Bearer ${response.data.accessToken}`
+        );
+        sessionStorage.setItem(
+          "refreshToken",
+          `Bearer ${response.data.refreshToken}`
+        );
+        console.log(
+          "User Name :",
+          response.data.username,
+          "Email : ",
+          response.data.email
+        );
+        setUserAuthenticated(true);
+        navigate("/");
+      } else {
+        setError("Login Failed");
+      }
+    } catch (error) {
+      console.error("Error in login function", error);
+      setError("Error while logging in, please wait");
+    }
+  };
+
   return (
     <Component>
       {account === "login" ? (
@@ -347,11 +301,10 @@ const Login = () => {
           </ImageContainer>
           <Wrapper>
             <StyledTextField
-<<<<<<< HEAD
               id="standard-email"
               label="Email"
               type="email"
-              onChange={(e) => handleLoginInput(e)}
+              onChange={handleLoginInput}
               name="email"
               value={login.email}
               variant="standard"
@@ -360,172 +313,90 @@ const Login = () => {
               id="standard-password"
               label="Password"
               type="password"
-              onChange={(e) => handleLoginInput(e)}
+              onChange={handleLoginInput}
               name="password"
               value={login.password}
               variant="standard"
             />
-            <LoginButton variant="contained" onClick={(e) => handleLogin(e)}>
-              Login
-            </LoginButton>
-=======
-              id="standard-basic"
-              label="Email"
-              type="email"
-              onChange={(e) => handleinput(e)}
-              name="email"
-              value={data.email}
-              variant="standard"
-            />
-            <StyledTextField
-              id="standard-basic"
-              label="Password"
-              type="password"
-              onChange={(e) => handleinput(e)}
-              name="password"
-              value={data.password}
-              variant="standard"
-            />
-            {error && <Error>{error}</Error> }
-            <LoginButton variant="contained" onClick={(e)=> SignupUSer(e)}>Login</LoginButton>
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-            <Text style={{ textAlign: "center" }}>OR</Text>
-            <SigninButton onClick={() => ToggleAccount()}>
-              Create an account
-            </SigninButton>
+            {error && <Error>{error}</Error>}
+            <LoginButton onClick={handleLogin}>Login</LoginButton>
+            <Text> Don't have an account? Sign Up </Text>
+            <CreateAccountButton onClick={ToggleAccount}>
+              Create Account
+            </CreateAccountButton>
           </Wrapper>
         </LoginBlock>
-<<<<<<< HEAD
-      ) :
-      (
-=======
       ) : (
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-        // Sign Up
         <SignUpBlock>
           <ImageContainer>
-            <Image src={signupimg} alt="Login-Image" />
+            <Image src={signupimg} alt="Signup-Image" />
           </ImageContainer>
           <Wrapper>
             <StyledTextField
-<<<<<<< HEAD
               id="standard-name"
               label="Name"
-              name="name"
-              value={signin.name}
-=======
-              id="standard-basic"
-              label="Name"
+              onChange={handleInput}
               name="name"
               value={data.name}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
-<<<<<<< HEAD
               id="standard-lastname"
               label="Last Name"
-              name="lastname"
-              value={signin.lastname}
-=======
-              id="standard-basic"
-              label="Last Name"
+              onChange={handleInput}
               name="lastname"
               value={data.lastname}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
-<<<<<<< HEAD
               id="standard-username"
-              label="User Name"
+              label="Username"
+              onChange={handleInput}
               name="username"
-              value={signin.username}
-              onChange={(e) => handleinput(e)}
+              value={data.username}
               variant="standard"
             />
             <StyledTextField
-              id="standard-contact no"
+              id="standard-phone_no"
               label="Phone No"
-              name="phone_no"
-              value={signin.phone_no}
-=======
-              id="standard-basic"
-              label="Phone No"
+              onChange={handleInput}
               name="phone_no"
               value={data.phone_no}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
-<<<<<<< HEAD
-              id="standard-sign in email"
-              label="E-Mail"
+              id="standard-email"
+              label="Email"
               type="email"
-              name="email"
-              value={signin.email}
-=======
-              id="standard-basic"
-              label="E-Mail"
-              type="email"
+              onChange={handleInput}
               name="email"
               value={data.email}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
-<<<<<<< HEAD
-              id="standard-sign in password"
+              id="standard-password"
               label="Password"
               type="password"
-              name="password"
-              value={signin.password}
-=======
-              id="standard-basic"
-              label="Password"
-              type="password"
+              onChange={handleInput}
               name="password"
               value={data.password}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
             <StyledTextField
-<<<<<<< HEAD
-              id="standard-confirm password"
-              label="Comfirm Password"
+              id="standard-confirm_password"
+              label="Confirm Password"
               type="password"
-              name="confirm_password"
-              value={signin.confirm_password}
-              onChange={(e) => handleinput(e)}
-              variant="standard"
-            />
-            {seterror && <Text>{error}</Text>}
-            <LoginButton variant="contained" onClick={(e) => SingupUSer(e)}>
-              Register
-            </LoginButton>{" "}
-=======
-              id="standard-basic"
-              label="Comfirm Password"
-              type="password"
+              onChange={handleInput}
               name="confirm_password"
               value={data.confirm_password}
-              onChange={(e) => handleinput(e)}
               variant="standard"
             />
-            {error && <Error>{error}</Error> }
-            <LoginButton variant="contained" onClick={(e) => SignupUSer(e)} >Register</LoginButton>{" "}
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
-            {/* Sign in Button */}
-            <Text style={{ textAlign: "center" }}>OR</Text>
-            <SigninButton onClick={() => ToggleAccount()}>
-              Already have an account
-            </SigninButton>
-            {/* Login Button */}
+            {error && <Error>{error}</Error>}
+            <SigninButton onClick={SignupUser}>Signup</SigninButton>
+            <Text onClick={ToggleAccount}>Already have an account? Login</Text>
+            <CreateAccountButton onClick={ToggleAccount}>
+              Signin
+            </CreateAccountButton>
           </Wrapper>
         </SignUpBlock>
       )}

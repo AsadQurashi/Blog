@@ -1,18 +1,22 @@
-<<<<<<< HEAD
-import { BrowserRouter, Outlet, Route, Routes , Navigate } from 'react-router-dom';
-import './App.css'
-import { useState } from 'react';
+import { useState } from "react";
+import {
+  BrowserRouter,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router-dom";
+import "./App.css";
 // Dataprovider
-import DataProvider from './Context/Dataprovider';
+import DataProvider from "./Context/Dataprovider";
 
 // Components
-import Login from './component/account/login';
-import Header from './component/Header/header';
-import Home from './component/Home/home';
-import CreatePost from './component/Create/create_post';
+import Login from "./component/account/login";
+import CreatePost from "./component/Create/create_post";
+import Header from "./component/Header/header";
+import Home from "./component/Home/home";
 
-const PrivateRoute = ({ isUserAuthenticated , ...props }) =>
-{
+const PrivateRoute = ({ isUserAuthenticated, ...props }) => {
   return isUserAuthenticated ? (
     <>
       <Header />
@@ -21,9 +25,9 @@ const PrivateRoute = ({ isUserAuthenticated , ...props }) =>
   ) : (
     <Navigate replace to="/login" />
   );
-}
+};
 function App() {
-  const [isUserAuthenticated , setUserAuthenticated] = useState(false)
+  const [isUserAuthenticated, setUserAuthenticated] = useState(false);
   return (
     <DataProvider>
       <BrowserRouter>
@@ -57,16 +61,6 @@ function App() {
         </div>
       </BrowserRouter>
     </DataProvider>
-=======
-import './App.css';
-import Login from './component/account/login';
-
-function App() {
-  return (
-    <div className="App">
-      <Login />
-    </div>
->>>>>>> b047c7af968c2defde288ca932b322a98c4a7fc4
   );
 }
 
