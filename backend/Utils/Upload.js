@@ -7,7 +7,7 @@ dotenv.config();
 const Username = process.env.user_name;
 const password = process.env.Password;
 
-const storagee = new GridFsStorage ({
+const storage = new GridFsStorage ({
   url: `mongodb+srv://${Username}:${password}@blog-clusster.rqysovs.mongodb.net/`,
   options: { useNewUrlParser: true, useUnifiedTopology: true },
   file: (request, file) => {
@@ -24,4 +24,4 @@ const storagee = new GridFsStorage ({
   },
 });
 
-export default multer({ storagee });
+export default multer({ storage });
